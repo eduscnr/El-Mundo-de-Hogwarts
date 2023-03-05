@@ -1,0 +1,473 @@
+/*Importo diferentes funte que voy a usar*/
+@font-face {
+  font-family: Bluu next;
+  src: url(../tipoDeLetra/BluuNext-Bold.otf);
+}
+@font-face {
+  font-family: Sofia pro;
+  src: url(../tipoDeLetra/sofiapro-light.otf);
+}
+@font-face {
+  font-family: American letter;
+  src: url(../tipoDeLetra/American\ Typewriter\ Regular.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#contenedor {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "main main main"
+    "footer footer footer";
+}
+header {
+  grid-area: header;
+}
+main {
+  grid-area: main;
+}
+footer {
+  grid-area: footer;
+}
+header span {
+  background-color: black;
+  padding: 20px;
+  display: block;
+  cursor: pointer;
+  font-size: 1.5rem;
+  width: 100%;
+  color: white;
+}
+.menu,
+#submenu {
+  list-style: none;
+  font-family: "American letter";
+}
+.menu {
+  background-color: black;
+  color: white;
+  width: 100%;
+  margin-left: -100%;
+  transition: all 0.5s;
+}
+nav li a,
+nav a {
+  display: block;
+  padding: 30px;
+  color: white;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+#submenu li a {
+  padding-left: 50px;
+  background-color: black;
+}
+#submenu {
+  height: 0;
+  overflow: hidden;
+  color: white;
+  transition: all 0.3s;
+}
+.mostrar {
+  margin-left: 0;
+}
+nav img {
+  width: 5%;
+  position: absolute;
+  left: 5%;
+}
+header {
+  background-image: url(../img/hogwarts-legacy-developers-respond-to-controversy-around-cre_bwzu.jpg);
+  height: 89vh;
+  background-position: left;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+main {
+  background-color: #10141b;
+  color: white;
+}
+h1,
+h2 {
+  font-family: "Bluu next";
+}
+
+h1 {
+  background-image: linear-gradient(to right, #f12711, #f5af19);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-animation: gradient 8s linear infinite;
+  -o-animation: gradient 8s linear infinite;
+  animation: gradient 8s linear infinite;
+}
+#titulo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+}
+h2 {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 2rem;
+  background-size: 300% 300%;
+  color: white;
+  padding: 1.3rem;
+  text-align: center;
+  transition: all 0.4s ease;
+}
+
+h2:hover {
+  background-position: right center;
+  color: #ffffff;
+}
+p {
+  font-family: "Sofia pro";
+}
+article {
+  display: flex;
+}
+.contenido {
+  align-self: center;
+  margin-left: 1.5rem;
+}
+
+.contenido p{
+  font-family: "American letter";
+}
+
+/*tabla*/
+table,
+thead tr th,
+tbody tr td {
+  border: 1px solid white;
+  border-collapse: collapse;
+  text-align: center;
+  font-family: "American letter";
+}
+table {
+  margin: 0 auto;
+  width: 50%;
+  height: 25rem;
+  margin-top: 0.5rem;
+  font-family: Sofia pro;
+}
+
+table {
+  border: 2px solid #000;
+  border-color: transparent;
+  transition: 1s linear all;
+}
+
+table td,
+table th {
+  padding: 5px 10px;
+}
+
+table:hover,
+table:focus {
+  border-color: white;
+}
+#mapaMerodeador img{
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  height: 80%;
+}
+video{
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+}
+/*footer*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+footer {
+  background-color: #10141b;
+}
+.wrapper {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+}
+.wrapper a:active{
+  background-color: transparent;
+}
+.wrapper .icon {
+  position: relative;
+  background: #ffffff;
+  border-radius: 50%;
+  padding: 15px;
+  margin: 10px;
+  width: 45px;
+  height: 45px;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.wrapper .tipo {
+  position: absolute;
+  top: 0;
+  font-size: 20px;
+  background: #ffffff;
+  color: #ffffff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.wrapper .tipo::before {
+  position: absolute;
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: #ffffff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.wrapper .icon:hover .tipo {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tipo {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tipo,
+.wrapper .facebook:hover .tipo::before {
+  background: #1877f2;
+  color: #10141b;
+}
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tipo,
+.wrapper .twitter:hover .tipo::before {
+  background: #1da1f2;
+  color: #ffffff;
+}
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tipo,
+.wrapper .instagram:hover .tipo::before {
+  background: #e4405f;
+  color: #ffffff;
+}
+.wrapper .github:hover,
+.wrapper .github:hover .tipo,
+.wrapper .github:hover .tipo::before {
+  background: #333333;
+  color: #ffffff;
+}
+/*Una media query para quitar lo estandarte a partir de 480 px*/
+@media (min-width: 480px) {
+  .alternativo,
+  .flexcontenido,
+  .casa {
+    display: none;
+  }
+}
+/*Media query para quitar el logo*/
+@media (max-width: 480px) {
+  #icono {
+    display: none;
+  }
+  #menu a {
+    padding: 15px;
+  }
+}
+/*Media query para smartphone*/
+@media (max-width: 479px) {
+  #icono {
+    display: none;
+  }
+  #Gryffindor {
+    padding: 0.55rem;
+    background-color: #a80102;
+    background-image: url("https://raw.githubusercontent.com/NestorPlasencia/img/master/Gryffindor.png");
+  }
+  .casa {
+    height: 300px;
+    flex-grow: 1;
+    font-family: "Sofia pro";
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    padding-top: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 110px 150px;
+    border-bottom: 30px solid transparent;
+    border-image: url(https://raw.githubusercontent.com/NestorPlasencia/img/master/border-triangle.png)
+      0% 0% 100% 0% stretch;
+    transition: 0.75s;
+  }
+  .alternativa {
+    width: 100px;
+    display: flex;
+  }
+  #Hufflepuff {
+    padding: 0.62rem;
+    background-color: #786254;
+    background-image: url("https://raw.githubusercontent.com/NestorPlasencia/img/master/Hufflepuff.png");
+  }
+
+  #Ravenclaw {
+    padding: 0.39rem;
+    background-color: #31446f;
+    background-image: url("https://raw.githubusercontent.com/NestorPlasencia/img/master/Ravenclaw.png");
+  }
+
+  #Slytherin {
+    padding: 1rem;
+    background-color: #097146;
+    background-image: url("https://raw.githubusercontent.com/NestorPlasencia/img/master/Slytherin.png");
+  }
+  .flex1 {
+    display: flex;
+    flex-direction: column;
+  }
+  .flexcontenido {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 479px) {
+  #contenedor {
+    display: grid;
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+  }
+  #menu a {
+    padding: 15px;
+  }
+  header {
+    grid-area: header;
+  }
+  #menu {
+    position: absolute;
+    z-index: 10000;
+  }
+  main {
+    grid-area: main;
+  }
+  h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5rem;
+  }
+  .contenido {
+    margin: 0;
+    text-align: center;
+  }
+  .imagenesCasas {
+    display: block;
+    margin: 0 auto;
+  }
+  table {
+    display: none;
+  }
+  #mapaMerodeador{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .flex1 {
+    display: flex;
+    flex-direction: column;
+  }
+  .flexcontenido {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+@media (min-width: 1024px) {
+  header span {
+    display: none;
+  }
+  .menu {
+    margin-left: 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+  #submenu-contenedor {
+    position: relative;
+  }
+  #submenu {
+    position: absolute;
+    top: 60px;
+    background-color: black;
+    width: 200px;
+    z-index: 1000;
+    opacity: 0;
+    overflow: hidden;
+  }
+  #submenu-contenedor:hover #submenu {
+    opacity: 1;
+    overflow: visible;
+  }
+}
+/*Media query para tablet*/
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+  #contenedor {
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "main main"
+      "footer footer";
+  }
+  #icono{display: none;}
+  .flex1 {
+    display: flex;
+    flex-direction: column;
+  }
+  .contenido {
+    margin: 0;
+    text-align: center;
+  }
+  .imagenesCasas {
+    display: block;
+    margin: 0 auto;
+  }
+
+  #menu {
+    position: absolute;
+    z-index: 1000;
+  }
+  #menu a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  #mapaMerodeador{
+    display: block;
+    margin: 0 auto;
+  }
+  video{
+    display: block;
+    margin: 0 auto;
+  }
+}
